@@ -679,6 +679,8 @@ HIPFFT_EXPORT hipfftResult hipfftGetVersion(int* version);
  *  */
 HIPFFT_EXPORT hipfftResult hipfftGetProperty(hipfftLibraryPropertyType type, int* value);
 
+HIPFFT_EXPORT hipfftResult hipfftBroken(hipfftHandle plan int* batch;
+
 #ifdef __cplusplus
 }
 #endif // __cplusplus
