@@ -66,7 +66,7 @@ module hipfft
 
   integer(c_int), parameter :: hipfftVersionMajor = 1
   integer(c_int), parameter :: hipfftVersionMinor = 0
-  integer(c_int), parameter :: hipfftVersionPatch = 27
+  integer(c_int), parameter :: hipfftVersionPatch = 28
   integer(c_int), parameter :: HIPFFT_FORWARD = -1
   integer(c_int), parameter :: HIPFFT_BACKWARD = 1
 
@@ -675,6 +675,18 @@ module hipfft
     module procedure hipfftGetProperty_typed
   end interface
 
+  interface hipfftGetPlanBatch
+    function hipfftGetPlanBatch_(plan,batch) bind(c, name="hipfftGetPlanBatch")
+      import
+      implicit none
+      integer(c_int) :: hipfftGetPlanBatch_
+      type(c_ptr),value :: plan
+      type(c_ptr),value :: batch
+    end function
+
+    module procedure hipfftGetPlanBatch_typed
+  end interface
+
 
   contains
 
@@ -956,6 +968,15 @@ module hipfft
       integer(c_int),target :: myValue
       !
       hipfftGetProperty_typed = hipfftGetProperty_(myType,c_loc(myValue))
+    end function
+
+    function hipfftGetPlanBatch_typed(plan,batch)
+      implicit none
+      integer(kind(HIPFFT_SUCCESS)) :: hipfftGetPlanBatch_typed
+      type(c_ptr), value :: plan
+      integer(c_int),target :: batch
+      !
+      hipfftGetPlanBatch_typed = hipfftGetPlanBatch_(plan,c_loc(batch))
     end function
 
 
