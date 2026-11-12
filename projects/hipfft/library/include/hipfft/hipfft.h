@@ -679,6 +679,13 @@ HIPFFT_EXPORT hipfftResult hipfftGetVersion(int* version);
  *  */
 HIPFFT_EXPORT hipfftResult hipfftGetProperty(hipfftLibraryPropertyType type, int* value);
 
+/*! @brief E2E test of the Fortran bindings workflow: get the plan's batch count.
+ *
+ *  @param[in] plan Handle of the FFT plan.
+ *  @param[out] batch Number of transforms in the plan.
+ *  */
+HIPFFT_EXPORT hipfftResult hipfftGetPlanBatch(hipfftHandle plan, int* batch);
+
 #ifdef __cplusplus
 }
 #endif // __cplusplus
