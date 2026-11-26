@@ -227,7 +227,7 @@ module hipsparse
   end enum
 
   integer(c_int), parameter :: hipsparseVersionMajor = 4
-  integer(c_int), parameter :: hipsparseVersionMinor = 8
+  integer(c_int), parameter :: hipsparseVersionMinor = 9
   integer(c_int), parameter :: hipsparseVersionPatch = 0
 
 
