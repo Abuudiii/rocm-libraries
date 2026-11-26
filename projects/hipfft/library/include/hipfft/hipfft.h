@@ -679,6 +679,13 @@ HIPFFT_EXPORT hipfftResult hipfftGetVersion(int* version);
  *  */
 HIPFFT_EXPORT hipfftResult hipfftGetProperty(hipfftLibraryPropertyType type, int* value);
 
+/*! @brief Get the batch size of an existing plan.
+ *
+ *  @param[in] plan Handle of the FFT plan.
+ *  @param[out] batch Batch size of the plan.
+ *  */
+HIPFFT_EXPORT hipfftResult hipfftGetPlanBatch(hipfftHandle plan, int* batch);
+
 #ifdef __cplusplus
 }
 #endif // __cplusplus
