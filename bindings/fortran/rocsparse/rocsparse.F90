@@ -590,7 +590,7 @@ module rocsparse
   end enum
 
   integer(c_int), parameter :: ROCSPARSE_VERSION_MAJOR = 5
-  integer(c_int), parameter :: ROCSPARSE_VERSION_MINOR = 2
+  integer(c_int), parameter :: ROCSPARSE_VERSION_MINOR = 3
   integer(c_int), parameter :: ROCSPARSE_VERSION_PATCH = 0
 
 
